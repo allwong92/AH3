@@ -1,5 +1,30 @@
 import java.util.Scanner;       // import Scanner class
 public class FizzBuzz {
+
+
+    public static void recursive(int n){
+        /*
+        This is a recursive solution for the FizzBuzz problem.
+         */
+        if (n == 0){    // termination condition, when int = 0, want to return (n = 1 is last int wanted)
+            return;
+        } else {
+            recursive(n-1);     // recursively call one less than n
+
+            if ((n % 3 == 0) && (n % 5 == 0)){  // if int is multiple of 3 and 5
+                System.out.print("FizzBuzz ");
+
+            } else if (n % 5 == 0) {            // if int is multiple of 5
+                System.out.print("Buzz ");
+
+            } else if (n % 3 == 0) {            // if int is multiple of 3
+                System.out.print("Fizz ");
+
+            } else {
+                System.out.print(n + " ");
+            }
+        }
+    }
     public static void fizzBuzz(int n){
         /*
         This method takes an integer (n) as the input and prints 1 to n based on FizzBuzz conditions:
@@ -35,7 +60,7 @@ public class FizzBuzz {
         // Prompt user for input and get n
         System.out.println("Input: ");
         int n = console.nextInt();
-        fizzBuzz(n);
-
+        //fizzBuzz(n);
+        recursive(n);
     }
 }
